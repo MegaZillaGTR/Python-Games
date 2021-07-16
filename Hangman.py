@@ -105,7 +105,7 @@ def main():
                 break
                 
                 
- def drawHangman(missedLetters, correctLetters, secretWord):
+def drawHangman(missedLetters, correctLetters, secretWord):
  
     print(HANGMAN_PICS[len(missedLetters)])
     print('The category is: ', CATEGORY)
@@ -130,12 +130,12 @@ def main():
     # Show the secret word with spaces in between each letter
     print(' '.join(blanks))
     
- def getPlayerGuess(alreadyGuessed):
+def getPlayerGuess(alreadyGuessed):
  
     while True:
         print('Guess a letter. ')
-        guess = input('> '.upper()
-        if len(guess != 1:
+        guess = input('> '.upper())
+        if len(guess) != 1:
             print('Please enter a single letter. ')
         elif guess in alreadyGuessed:
             print('You have already guessed that letter.  Choose again. ')
@@ -146,8 +146,8 @@ def main():
             
             
  # If this program was run (instead of imported), run the game
- if __name__ == '__main__':
+if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-      sys.exit()    # When Ctrl-C is pressed, end the program
+      sys.exit()    # When Ctrl-C is pressed, end the game
