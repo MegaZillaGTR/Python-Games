@@ -86,9 +86,9 @@ def main():
             foundAllLetters = True  # Start off assumin they've won
             for secretWordLetter in secretWord:
                 if secretWordLetter not in correctLetters:
-                     # There's a letter in the secret word that isn't yet in correctLetters, so the play hasn't won
-                     foundAllLetters = False
-                     break
+                    # There's a letter in the secret word that isn't yet in correctLetters, so the play hasn't won
+                    foundAllLetters = False
+                    break
                 if foundAllLetters:
                     print('Yes! the secret word is: ', secretWord)
                     print('You have won!')
