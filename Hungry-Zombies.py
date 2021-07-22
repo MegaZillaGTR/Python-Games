@@ -26,7 +26,7 @@ def main():
     
     Zombies can go through the corners of two diagonal walls.  Stay safe!""".format(NUM_TELEPORTS))
     
-    input('Press Enter to begin...')
+    input('Press Enter to begin...''')
     
     #Set up a new game
     board = getNewBoard()
@@ -109,7 +109,7 @@ def displayBoard(board, zombies, playerPosition):
     for y in range(HEIGHT):
         # Draw appropriate character
         if board[(x, y)] == WALL:
-            print(WA::, end=' ')
+            print(WALL, end=' ')
         elif board[(x, y)] == DEAD_ZOMBIES:
             print(DEAD_ZOMBIES, end=' ')
         elif board[(x, y)] == playerPosition:
@@ -126,21 +126,22 @@ def askForPlayerMove(board, zombies, playerPosition):
     playerX, playerY = playerPosition
     
     # Find which directions aren't blocked by a wall:
-    q = 'Q' if isEmpty(playerX - 1, playerY - 1, board, zombies) else
+    q = 'Q' if isEmpty(playerX - 1, playerY - 1, board, zombies) 
+    else:
     
-    w = 'W' if isEmpty(playerX + 0, playerY - 1, board, zombies) else
+    w = 'W' if isEmpty(playerX + 0, playerY - 1, board, zombies) else:
     
-    e = 'E' if isEmpty(playerX + 1, playerY - 1, board, zombies) else
+    e = 'E' if isEmpty(playerX + 1, playerY - 1, board, zombies) else:
     
-    d = 'D' if isEmpty(playerX + 1, playerY + 0, board, zombies) else
+    d = 'D' if isEmpty(playerX + 1, playerY + 0, board, zombies) else:
     
-    c = 'C' if isEmpty(playerX + 1, playerY + 1, board, zombies) else
+    c = 'C' if isEmpty(playerX + 1, playerY + 1, board, zombies) else:
     
-    x = 'X' if isEmpty(playerX + 0, playerY + 1, board, zombies) else
+    x = 'X' if isEmpty(playerX + 0, playerY + 1, board, zombies) else:
     
-    z = 'Z' if isEmpty(playerX - 1, playerY + 1, board, zombies) else
+    z = 'Z' if isEmpty(playerX - 1, playerY + 1, board, zombies) else:
     
-    a = 'A' if isEmpty(playerX - 1, playerY + 0, board, zombies) else
+    a = 'A' if isEmpty(playerX - 1, playerY + 0, board, zombies) else:
     
     allMoves = (q + w + e + d + c + x + a + z + 'S')
     

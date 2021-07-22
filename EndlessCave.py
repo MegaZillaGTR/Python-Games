@@ -26,19 +26,19 @@ while True:
         sys.exit()     # When Ctrl-C is pressed, end the program
         
      # Adjust the left side width
-     diceRoll = random.randint(1, 6)
-     if diceRoll == 1 and leftWidth > 1:
-        leftWidth = leftWidth - 1   # Decreases left side width
-     elif diceRoll == 2 and leftWidth + gapWidth < WIDTH - 1:
-        leftWidth = leftWidth + 1   # Increase left side width
-     else:
-        pass   # Do nothing, no change in left side width
+    diceRoll = random.randint(1, 6)
+    if diceRoll == 1 and leftWidth > 1:
+      leftWidth = leftWidth - 1   # Decreases left side width
+    elif diceRoll == 2 and leftWidth + gapWidth < WIDTH - 1:
+      leftWidth = leftWidth + 1   # Increase left side width
+    else:
+      pass   # Do nothing, no change in left side width
         
      # Adjust the gap width
-     diceRoll = random.randint(1, 6)
-     if diceRoll == 1 and gapWidth > 1:
-        gapWidth = gapWidth -1    # Decrease gap width
-     elif diceRoll == 2 and leftWidth + gapWidth < WIDTH - 1:
-        gapWidth = gapWidth + 1   # Increase gap width
-     else:
-        pass    # Do nothing, no change in gap width
+    diceRoll = random.randint(1, 6)
+    if diceRoll == 1 and gapWidth > 1:
+      gapWidth = gapWidth -1    # Decrease gap width
+    elif diceRoll == 2 and leftWidth + gapWidth < WIDTH - 1:
+      gapWidth = gapWidth + 1   # Increase gap width
+    else:
+      pass    # Do nothing, no change in gap width
