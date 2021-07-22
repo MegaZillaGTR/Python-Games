@@ -1,5 +1,6 @@
 """Hangman
 Guess the letters to a secret word before the hangman is drawn."""
+#!/usr/bin/env python3
 
 import random, sys
 
@@ -92,8 +93,7 @@ def main():
                 if foundAllLetters:
                     print('Yes! the secret word is: ', secretWord)
                     print('You have won!')
-                    break
-                    
+                    break              
         else:
             # The player has guessed incorrectly
             missedLetters.append(guess)
@@ -105,44 +105,44 @@ def main():
                 break
                 
                 
-def drawHangman(missedLetters, correctLetters, secretWord):
+    def drawHangman(missedLetters, correctLetters, secretWord): 
  
-    print(HANGMAN_PICS[len(missedLetters)])
-    print('The category is: ', CATEGORY)
-    print()
+        print(HANGMAN_PICS[len(missedLetters)])
+        print('The category is: ', CATEGORY)
+        print()
     
-    # Show the incorrectly guessed letters
-    print('Missed Letters: ', end=' ')
-    for letter in missedLetters:
-        print(letter, end=' ')
-    if len(missedLetters) == 0:
-        print('No missed letters yet.')
-    print()
+        # Show the incorrectly guessed letters
+        print('Missed Letters: ', end=' ')
+        for letter in missedLetters:
+            print(letter, end=' ')
+        if len(missedLetters) == 0:
+            print('No missed letters yet.')
+            print()
     
-    # Display the blanks for the secret word
-    blanks = ['_'] * len(secretWord)
+        # Display the blanks for the secret word
+        blanks = ['_'] * len(secretWord)
     
-    # Replace blanks with correctly guessed letters
-    for i in range(len(secretWord)):
-        if secretWord[i] in correctLetters:
-            blanks[i] = secretWord[i]
+        # Replace blanks with correctly guessed letters
+        for i in range(len(secretWord)):
+            if secretWord[i] in correctLetters:
+                blanks[i] = secretWord[i]
             
-    # Show the secret word with spaces in between each letter
-    print(' '.join(blanks))
+        # Show the secret word with spaces in between each letter
+        print(' '.join(blanks))
     
-def getPlayerGuess(alreadyGuessed):
+    def getPlayerGuess(alreadyGuessed):
  
-    while True:
-        print('Guess a letter. ')
-        guess = input('> '.upper())
-        if len(guess) != 1:
-            print('Please enter a single letter. ')
-        elif guess in alreadyGuessed:
-            print('You have already guessed that letter.  Choose again. ')
-        elif not guess.isalpha():
-            print('Please enter a LETTER. ')
-        else:
-            return guess
+        while True:
+            print('Guess a letter. ')
+            guess = input('> '.upper())
+            if len(guess) != 1:
+                print('Please enter a single letter. ')
+            elif guess in alreadyGuessed:
+                print('You have already guessed that letter.  Choose again. ')
+            elif not guess.isalpha():
+                print('Please enter a LETTER. ')
+            else:
+                return guess
             
             
  # If this program was run (instead of imported), run the game
